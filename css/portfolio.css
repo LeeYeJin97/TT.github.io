@@ -1,0 +1,304 @@
+
+/* ---- LAYOUT ---- */
+html,
+body {
+  overflow: hidden;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+#main{background-color: #000;}
+#wrap{position:relative;width:100%;}
+header #logo a img{
+    position: relative;
+    position: fixed;
+    top:5%;
+    left:3%;
+    width:80px;
+}
+.burger {
+    position: absolute;
+    position: fixed;
+    top: 5%;
+    right: 3%;
+    width: 35px;
+    height: 24px;
+    transition: .3s ease-in-out;
+  }
+  
+  .burger span{
+    position: absolute;
+    height: 3px;
+    border-radius: 5px;
+    width: 100%;
+    background: #fff;
+    top: 0;
+    transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+  }
+  
+  .burger span:nth-child(1){
+    top: 0;
+  }
+  .burger span:nth-child(2),
+  .burger span:nth-child(3){
+    top: 10px;
+  }
+  .burger span:nth-child(4){
+    top: 20px;
+  }
+  
+  .burger:hover span{
+    background: #fff;
+  }
+  .burger:hover span:nth-child(1),
+  .burger:hover span:nth-child(4){
+    opacity: 1;
+  }
+  
+  .burger:hover span:nth-child(2){
+ 
+  }
+  
+  .burger:hover span:nth-child(3){
+    
+  }
+  .burger.active span{
+    background: #000;
+  }
+  .burger.active span:nth-child(1),
+  .burger.active span:nth-child(4){
+    opacity: 0;
+  }
+  
+  .burger.active span:nth-child(2){
+    transform: rotate(45deg);
+  }
+  
+  .burger.active span:nth-child(3){
+    transform: rotate(-45deg);
+  }
+
+  /* Navigation */
+  #inner{
+    z-index:5000;
+    position: relative;
+  }
+  .overlay{
+    position: fixed;
+    background: #fff;
+    right: 0;
+    width: 75%;
+    height: 0;
+    visibility: hidden;
+    display: flex;
+    transition:visibility .3s, height .3s;
+  }
+  .menu{
+   margin: 200px;
+  }
+  nav {
+    font-size: 65px;
+    font-weight: 400;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul li{
+    opacity: 0;
+    margin: 1rem 0;
+  }
+  nav ul li a{
+    color: #000;
+    text-decoration: none;
+    opacity: .75;
+  }
+  nav ul li a:hover{
+    transition: opacity .2s ease;
+    color: #000;
+    opacity: 1;
+    text-decoration: line-through;
+    
+  }
+  .snslist{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display:inline;
+  }
+  .snslist li{
+    padding:20px;
+    float:left;
+    color:#fff;
+    font-size: 1rem;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight:100;
+  }
+  .snslist button{
+    border:1px solid #000;
+    background:#fff;
+    width:100px;
+    height:30px;
+    font-size: 1rem;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight:100;
+    color:#000;
+    margin:20px;
+  }
+  .snslist button:hover{
+    background:#000;
+  }
+  .snslist button:hover a{
+
+      transition: opacity .2s ease;
+      color: #fff;
+      opacity: 1;
+   
+  }
+  /* Animation */
+  @keyframes fadeInLeft {
+      0% {
+          opacity: 0;
+          transform: translate3d(-25%, 0, 0);
+      }
+      100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+      }
+  }
+  
+  
+  .overlay.visible{
+    visibility: visible;
+    height: 100%;
+  }
+  .overlay.visible li {
+    animation: fadeInLeft .3s ease forwards;
+ }
+  .overlay.visible li:nth-of-type(1){
+    animation-delay: .26s;
+  }
+  .overlay.visible li:nth-of-type(2){
+    animation-delay: .29s;
+  }
+  .overlay.visible li:nth-of-type(3){
+    animation-delay: .32s;
+  }
+  .overlay.visible button{
+    animation: fadeInLeft .6s ease forwards;
+    animation-delay: .35s;
+  }
+    
+#contents p{
+    position: fixed;
+    top: 50%;
+    right: 30%;
+    color: #fff;
+}
+
+.navigation {
+    position: fixed;
+    top:45%;
+    left:5%;
+  }
+  
+  .scaleUp {
+    list-style-type: none;
+  }
+  
+  .scaleUp li {
+    height: 30px;
+  }
+  
+  .scaleUp a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color:  #aaa;
+    color: #aaa;
+    border-radius: 50%;
+    text-decoration: none;
+    text-indent: -9000px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .scaleUp a:hover,.scaleUp a:focus{
+    background-color:  #222;
+    transform: scale(1.5);
+  }
+
+      
+.content{
+position: relative;
+width:85%;
+height: 100vh;
+margin:0 150px ;
+}
+.content .section{height:800px;}
+.content .section .area{
+  position: absolute;
+  width:100%;
+  height: 100vh;
+ }
+
+.content .section .area .section-left h2{
+    font-size:30px;
+    font-weight:500; color:#fff;
+    margin-bottom: 10px;
+  
+}
+.content .section .area .section-left>p{
+    position: absolute;
+    font-size:15px;
+    font-weight:500; color:#fff;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.content .section .area .morebtn:hover {
+  color: #000;
+  background: #fff;
+  }
+
+.content .section .area .hash{font-size:12px;font-weight:100; color:#ccc;
+    margin-bottom: 5px;
+    border-style: none;}
+
+.content .section .area .morebtn,
+.content .section .area .morebtn::after {
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+-o-transition: all 0.3s;
+transition: all 0.3s;
+}
+
+
+.content .section .area .morebtn {
+    background: none;
+    border: 1.5px solid #fff;
+    color: #fff;
+    display: block;
+    position: relative;
+    width:100px;
+    height:20px; 
+    font-size:15px; 
+    font-weight:100;
+    text-align:center; 
+   
+  }
+  .content .section .area .section-left{
+    position: absolute;
+ 
+    padding-top: 100px;
+    float: left;
+    width:150px;
+  }
+  .content .section .area .section-right{
+
+    float: right;
+
+  }
+  .content .section .area .section-right a img{
+
+ width: 1000px;
+  }
+*/
